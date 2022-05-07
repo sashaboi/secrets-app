@@ -1,0 +1,72 @@
+.page-parent {
+  background-color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.app-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  gap: 2rem;
+  width: 80vw;
+  height: 80vh;
+  border: 1px solid grey;
+  border-radius: 2rem;
+  text-align: center;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.primary-btn {
+  padding: 2rem;
+  color: grey;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  box-shadow: 25px 25px 50px #bebebe, -25px -25px 50px #ffffff;
+}
+.primary-btn:hover {
+  cursor: pointer;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+  box-shadow: 25px 25px 50px #bebebe, -25px -25px 50px #ffffff;
+}
+.app-container input {
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  border-radius: 2rem;
+  border: none;
+
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+  box-shadow: inset 9px 9px 18px #cacaca, inset -9px -9px 18px #f6f6f6;
+}
+
+.app-container input:focus {
+  border: none;
+}
+.app-container h3 {
+  color: grey;
+}
+.app-container h1 {
+  color: grey;
+}
+.app-container h1 span {
+  text-decoration: underline;
+}
+.footer-info {
+  color: grey;
+}
+.footer-info:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}

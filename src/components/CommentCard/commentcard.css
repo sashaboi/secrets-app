@@ -1,0 +1,16 @@
+.comment-card-parent {
+  color: grey;
+  border: none;
+  padding: 1rem;
+  border-radius: 2rem;
+  background: #e0e0e0;
+  box-shadow: 14px 14px 28px #a6a6a6, -14px -14px 28px #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+.comment-action-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
