@@ -1,0 +1,40 @@
+.url-copy-div {
+  padding: 2rem;
+  color: grey;
+  border-radius: 43px;
+  background: #e0e0e0;
+  box-shadow: 14px 14px 28px #a6a6a6, -14px -14px 28px #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-grow: 0;
+}
+.url-copy-div:hover {
+  background-color: #cccccc;
+  cursor: pointer;
+  color: rgb(78, 78, 78);
+}
+.share-link-container {
+  color: grey;
+}
+.copy-badge {
+  font-size: 1.5rem;
+  margin-top: 0.3rem;
+}
+.social-icons-container {
+  display: flex;
+  gap: 2rem;
+  font-size: 2rem;
+}
+.social-icons-container > *:hover {
+  cursor: pointer;
+  color: rgb(78, 78, 78);
+}
+a:visited {
+  text-decoration: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
