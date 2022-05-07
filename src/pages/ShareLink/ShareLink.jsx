@@ -9,7 +9,7 @@ const ShareLink = props => {
   const navigate = useNavigate();
   const { idofuser } = state;
   console.log(idofuser);
-  const url = `http://localhost:3000/comment/${idofuser}`;
+  const url = `https://feedback-anon.netlify.app/comment/${idofuser}`;
   return (
     <div className="page-parent">
       <div className="share-link-container app-container">
