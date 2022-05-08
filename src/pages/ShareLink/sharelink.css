@@ -32,6 +32,9 @@
   gap: 2rem;
   font-size: 2rem;
 }
+.social-icons-container {
+  color: grey;
+}
 .social-icons-container > *:hover {
   cursor: pointer;
   color: rgb(78, 78, 78);

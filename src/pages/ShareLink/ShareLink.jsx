@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BiCopy } from 'react-icons/bi';
-import { BsTwitter, BsFacebook, BsInstagram } from 'react-icons/bs';
+import { BsTwitter } from 'react-icons/bs';
 import { UseUser } from '../../context/user-context';
 import './sharelink.css';
 
@@ -50,6 +50,9 @@ const ShareLink = () => {
         >
           See my comments
         </button>
+        <div onClick={() => navigate('/aboutme')} className="footer-info">
+          About me
+        </div>
       </div>
     </div>
   );

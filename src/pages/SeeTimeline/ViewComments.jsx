@@ -68,6 +68,9 @@ const ViewComments = () => {
         <button onClick={() => navigate('/')} className="primary-btn">
           Go Home
         </button>
+        <div onClick={() => navigate('/aboutme')} className="footer-info">
+          About me
+        </div>
       </div>
     </div>
   );
