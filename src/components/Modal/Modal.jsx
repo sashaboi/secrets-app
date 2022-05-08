@@ -15,7 +15,7 @@ const Modal = () => {
           <h3>Anon says ...</h3>
         </div>
         <div className="modal-content">{modalContent}</div>
-        <h3>I got this anonymous feedback on www.domain.com</h3>
+        <h3>Get your own on https://feedback-anon.netlify.app/</h3>
         <div onClick={() => setShowModal(false)} className="close-btn">
           <AiFillCloseCircle />
         </div>
