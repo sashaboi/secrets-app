@@ -5,6 +5,7 @@ import { BiCopy } from 'react-icons/bi';
 import { Circles } from 'react-loading-icons';
 import { SEE_COMMENT_BY_USER_ID } from '../../GraphQl/Queries';
 import './viewcomments.css';
+import Modal from '../../components/Modal/Modal';
 import CommentCard from '../../components/CommentCard/CommentCard';
 const ViewComments = () => {
   const idofuser = localStorage.getItem('secret-uuid');
@@ -26,17 +27,18 @@ const ViewComments = () => {
       setCommentsFromApi(data.comments);
     }
   }, [data]);
+  console.log(commentsFromApi.length);
   return (
     <div className="page-parent">
       <div className="comments-section-container">
-        <h1>ViewComments</h1>
-        <h3>Listing all comments for {myName}</h3>
+        <h1>
+          {commentsFromApi.length} comments for {myName}
+        </h1>
+
+        <Modal />
         <div className="comment-renderer">
           {commentsFromApi.length !== 0 ? (
             commentsFromApi.map(obj => (
-              // <div className="comment-child" key={obj.pk}>
-              //   {obj.comment}
-              // </div>
               <CommentCard key={obj.pk} comment={obj.comment} />
             ))
           ) : (
@@ -49,8 +51,6 @@ const ViewComments = () => {
             </div>
           )}
         </div>
-
-        <h3>Share your link to get more comments</h3>
 
         <div
           onClick={() => {
@@ -65,9 +65,6 @@ const ViewComments = () => {
             <BiCopy />
           </div>
         </div>
-        <button onClick={() => navigate('/')} className="primary-btn">
-          Go Home
-        </button>
         <div onClick={() => navigate('/aboutme')} className="footer-info">
           About me
         </div>
