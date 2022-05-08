@@ -4,9 +4,14 @@ import { BiCopy } from 'react-icons/bi';
 import { BsTwitter } from 'react-icons/bs';
 import { UseUser } from '../../context/user-context';
 import './sharelink.css';
+import Navbar from '../../components/NavBar/Navbar';
+import Footer from '../../components/Footer/Footer';
+import Alert from '../../components/Alert/Alert';
+import { UseAlert } from '../../context/Alert-context';
 
 const ShareLink = () => {
   const navigate = useNavigate();
+  const { alertstatus, alertmessage, showalert } = UseAlert();
   const userId = localStorage.getItem('secret-uuid');
   let textinurl =
     'What%20do%20you%20think%20about%20me%20%3F%20Tell%20me%20anonymously%0A%0A';
@@ -21,9 +26,11 @@ const ShareLink = () => {
 
   const idofuser = userId;
   console.log(idofuser);
-  const url = `https://feedback-anon.netlify.app/comment/${idofuser}`;
+  const url = `${window.location.origin}/comment/${idofuser}`;
   return (
     <div className="page-parent">
+      <Navbar />
+      {alertstatus && <Alert message={alertmessage} />}
       <div className="share-link-container app-container">
         <h1>
           Share your link to get feedback <span>Anonymously</span>
@@ -42,7 +49,7 @@ const ShareLink = () => {
         <div
           onClick={() => {
             navigator.clipboard.writeText(url);
-            alert('copied url to clipboard!');
+            showalert('copied url to clipboard!');
           }}
           className="url-copy-div"
         >
@@ -59,10 +66,8 @@ const ShareLink = () => {
         >
           See my comments
         </button>
-        <div onClick={() => navigate('/aboutme')} className="footer-info">
-          About me
-        </div>
       </div>
+      <Footer />
     </div>
   );
 };

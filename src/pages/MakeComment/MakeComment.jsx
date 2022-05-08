@@ -42,6 +42,11 @@ const MakeComment = () => {
       setComment('sending comment..');
     }
   };
+  const KeyDownHandler = e => {
+    if (e.key === 'Enter') {
+      sendCommentHandler();
+    }
+  };
   return (
     <div className="page-parent">
       <Navbar />
@@ -54,6 +59,7 @@ const MakeComment = () => {
 
         <input
           value={comment}
+          onKeyDown={e => KeyDownHandler(e)}
           onChange={e => setComment(e.target.value)}
           type="text"
           placeholder="write your feedback here"

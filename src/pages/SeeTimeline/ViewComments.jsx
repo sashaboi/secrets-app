@@ -11,7 +11,7 @@ import Navbar from '../../components/NavBar/Navbar';
 import Footer from '../../components/Footer/Footer';
 const ViewComments = () => {
   const idofuser = localStorage.getItem('secret-uuid');
-  const url = `https://feedback-anon.netlify.app/comment/${idofuser}`;
+  const url = `${window.location.origin}/comment/${idofuser}`;
   const navigate = useNavigate();
   const [commentsFromApi, setCommentsFromApi] = useState([]);
   const myId = localStorage.getItem('secret-uuid');

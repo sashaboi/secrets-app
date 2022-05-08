@@ -7,9 +7,11 @@ import { ADD_USER } from '../../GraphQl/Mutations';
 import { UseUser } from '../../context/user-context';
 import Navbar from '../../components/NavBar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import { UseAlert } from '../../context/Alert-context';
+
 const CreateAccount = () => {
   const { setUserName, setUserID } = UseUser();
-
+  const { showalert } = UseAlert();
   const navigate = useNavigate();
   const [errorText, setErrorText] = useState('');
   const [userNameText, setUserNameText] = useState('');
@@ -34,9 +36,15 @@ const CreateAccount = () => {
 
     setUserName(userNameText);
     setUserID(userUuid);
+    showalert('User Created');
     navigate('/sharelink');
   };
 
+  const KeyDownHandler = e => {
+    if (e.key === 'Enter') {
+      CreateAccountClickHandler();
+    }
+  };
   return (
     <div className="page-parent">
       <Navbar />
@@ -46,6 +54,7 @@ const CreateAccount = () => {
         </h1>
         <div className="input-container">
           <input
+            onKeyDown={e => KeyDownHandler(e)}
             type="text"
             value={userNameText}
             onChange={e => setUserNameText(e.target.value)}
