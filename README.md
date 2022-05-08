@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Get to know comments / feedback about yourself : ANONYMOUSLY !
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is made using [React JS](https://github.com/facebook/create-react-app) and with [Hasura](https://hasura.io/) on the backend.
 
-## Available Scripts
+## Documentation and preparation
 
-In the project directory, you can run:
+The Idea obviously exists, but the reason for me to do this again is the sort of virality of this sort of a thing in a micro community...
+The planning started on a [whimsical flow chart](https://whimsical.com/tellmena-9Azv5ig6NknQXXFzzfvXCC@2Ux7TurymNNUCzLbNs5a)
 
-### `npm start`
+## Graphql
+Graphql was a little bit new , but I had experience with using REST APIs so getting the hang of this was not very difficult. Got a help from teammates at the right times sometimes. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Planning and execution
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The Project was then managed via an [Excel sheet](https://docs.google.com/spreadsheets/d/13OTkU43lVPWBaBKaPTLKS4p2KSeQXIDNjc89pfPi4I8/edit?usp=sharing)
 
-### `npm test`
+## How to use : Flow of events 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The aim of this app is to let users get feedback / comments / gossip about themselves. And fast. 
 
-### `npm run build`
+Flow goes like this : Create Account > Get Link to Share > Share Link on social channels > See Comments which you recieve > CTA of twitter share. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you all !
