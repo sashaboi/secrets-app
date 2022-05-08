@@ -1,0 +1,17 @@
+.alert-parent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.alert-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  border-radius: 2rem;
+  color: white;
+  font-weight: 600;
+}

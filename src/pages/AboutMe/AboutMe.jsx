@@ -1,20 +1,23 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { BsTwitter, BsLinkedin, BsInstagram, BsGithub } from 'react-icons/bs';
-
 import './aboutme.css';
+import Navbar from '../../components/NavBar/Navbar';
+import Footer from '../../components/Footer/Footer';
 const AboutMe = () => {
   return (
     <div className="page-parent">
+      <Navbar />
       <div className="app-container">
         <h1>About Me</h1>
         <p className="about-me-desc">
-          I am Onkar ,maker of NeoGossip, and I am looking for a job !
+          I am Onkar ,maker of NeoGossip, and I am looking for a job as Frontend
+          Developer !
           <br />
           <br />
-          <br /> Currently learning Reactjs @ NeogCamp, with a little bit of
-          background of Python/Django , I am looking to put my skills to use in
-          the real world. Here's more information about me : <br />
+          <br /> Upskilling my Reactjs @ NeogCamp, experience in Python/Django ,
+          I am looking to put my skills to use in the real world. Here's more
+          information about me : <br />
           <br />
           <u>
             <a
@@ -26,7 +29,7 @@ const AboutMe = () => {
             </a>
           </u>
         </p>
-        <div className=" social-icons-container">
+        <div className=" social-icons-container-about-me">
           <a
             href="https://twitter.com/i_am_onkar"
             rel="noreferrer"
@@ -57,6 +60,7 @@ const AboutMe = () => {
           </a>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

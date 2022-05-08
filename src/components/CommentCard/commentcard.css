@@ -14,3 +14,10 @@
   display: flex;
   gap: 0.5rem;
 }
+.comment-card-parent:hover {
+  cursor: pointer;
+  background-color: rgb(207, 207, 207);
+}
+.comment-content:hover {
+  text-decoration: underline;
+}

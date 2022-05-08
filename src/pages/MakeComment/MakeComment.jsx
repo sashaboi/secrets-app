@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useMutation, useQuery } from '@apollo/client';
 import { BallTriangle } from 'react-loading-icons';
 
 import './makecomment.css';
 import { ADD_COMMENT } from '../../GraphQl/Mutations';
 import { FIND_USERNAME_BY_ID } from '../../GraphQl/Queries';
+import Navbar from '../../components/NavBar/Navbar';
+import Footer from '../../components/Footer/Footer';
+import Alert from '../../components/Alert/Alert';
+import { UseAlert } from '../../context/Alert-context';
 const MakeComment = () => {
+  const navigate = useNavigate();
   const [comment, setComment] = useState('');
   const [disabled, setDisabled] = useState(false);
+  const { alertstatus, alertmessage, showalert } = UseAlert();
   const { id } = useParams();
   const onMutationComplete = () => {
     setComment('');
+    showalert('Comment added');
     setDisabled(false);
   };
   const [AddComment] = useMutation(ADD_COMMENT, {
@@ -32,10 +39,18 @@ const MakeComment = () => {
       AddComment({
         variables: { comment: comment, commented_on_user_id: id },
       });
+      setComment('sending comment..');
+    }
+  };
+  const KeyDownHandler = e => {
+    if (e.key === 'Enter') {
+      sendCommentHandler();
     }
   };
   return (
     <div className="page-parent">
+      <Navbar />
+      {alertstatus && <Alert message={alertmessage} />}
       <div className="app-container">
         <h1>
           Write Feedback for <br />{' '}
@@ -44,6 +59,7 @@ const MakeComment = () => {
 
         <input
           value={comment}
+          onKeyDown={e => KeyDownHandler(e)}
           onChange={e => setComment(e.target.value)}
           type="text"
           placeholder="write your feedback here"
@@ -55,17 +71,11 @@ const MakeComment = () => {
         >
           Send comment
         </button>
-        <button
-          disabled={comment.length === 0}
-          onClick={() => navigate('/')}
-          className="primary-btn"
-        >
+        <button onClick={() => navigate('/')} className="secondary-btn">
           Create your own link..
         </button>
-        <div onClick={() => navigate('/aboutme')} className="footer-info">
-          About me
-        </div>
       </div>
+      <Footer />
     </div>
   );
 };

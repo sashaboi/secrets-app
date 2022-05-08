@@ -7,9 +7,11 @@ import { SEE_COMMENT_BY_USER_ID } from '../../GraphQl/Queries';
 import './viewcomments.css';
 import Modal from '../../components/Modal/Modal';
 import CommentCard from '../../components/CommentCard/CommentCard';
+import Navbar from '../../components/NavBar/Navbar';
+import Footer from '../../components/Footer/Footer';
 const ViewComments = () => {
   const idofuser = localStorage.getItem('secret-uuid');
-  const url = `https://feedback-anon.netlify.app/comment/${idofuser}`;
+  const url = `${window.location.origin}/comment/${idofuser}`;
   const navigate = useNavigate();
   const [commentsFromApi, setCommentsFromApi] = useState([]);
   const myId = localStorage.getItem('secret-uuid');
@@ -30,6 +32,7 @@ const ViewComments = () => {
   console.log(commentsFromApi.length);
   return (
     <div className="page-parent">
+      <Navbar />
       <div className="comments-section-container">
         <h1>
           {commentsFromApi.length}{' '}
@@ -67,10 +70,8 @@ const ViewComments = () => {
             <BiCopy />
           </div>
         </div>
-        <div onClick={() => navigate('/aboutme')} className="footer-info">
-          About me
-        </div>
       </div>
+      <Footer />
     </div>
   );
 };
