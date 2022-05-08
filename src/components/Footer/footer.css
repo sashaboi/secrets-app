@@ -1,0 +1,14 @@
+.footer-parent {
+  color: grey;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding-top: 1rem;
+}
+.footer-parent span {
+  text-decoration: underline;
+  padding: 0.4rem;
+}
+.footer-parent span:hover {
+  cursor: pointer;
+}

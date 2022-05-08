@@ -2,3 +2,10 @@
   width: 80%;
   color: grey;
 }
+.social-icons-container-about-me {
+  color: grey;
+  font-size: 3rem;
+  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+}

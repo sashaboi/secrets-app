@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 import './createaccount.css';
 import { ADD_USER } from '../../GraphQl/Mutations';
 import { UseUser } from '../../context/user-context';
+import Navbar from '../../components/NavBar/Navbar';
+import Footer from '../../components/Footer/Footer';
 const CreateAccount = () => {
   const { setUserName, setUserID } = UseUser();
 
@@ -12,6 +14,15 @@ const CreateAccount = () => {
   const [errorText, setErrorText] = useState('');
   const [userNameText, setUserNameText] = useState('');
   const [Adduser] = useMutation(ADD_USER);
+  const localkey = localStorage.getItem('secret-uuid');
+
+  useEffect(() => {
+    if (localkey) {
+      navigate('/viewcomments');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [localkey]);
+
   const CreateAccountClickHandler = () => {
     userNameText === '' && setErrorText("Can't create a blank user");
     const userUuid = uuid();
@@ -28,6 +39,7 @@ const CreateAccount = () => {
 
   return (
     <div className="page-parent">
+      <Navbar />
       <div className="app-container">
         <h1>
           Get <span>Anonymous</span> feedback from your followers{' '}
@@ -48,10 +60,8 @@ const CreateAccount = () => {
           </button>
           <h3>{errorText}</h3>
         </div>
-        <div onClick={() => navigate('/aboutme')} className="footer-info">
-          About me
-        </div>
       </div>
+      <Footer />
     </div>
   );
 };

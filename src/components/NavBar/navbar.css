@@ -1,0 +1,22 @@
+.navbar-parent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding-bottom: 1rem;
+}
+.logo-img {
+  max-height: 10vh;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  gap: 1rem;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+}
+.logo-container:hover {
+  cursor: pointer;
+  background-color: rgb(189, 189, 189);
+}

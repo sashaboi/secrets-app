@@ -19,13 +19,11 @@ const CommentCard = ({ comment }) => {
     setShowModal(true);
   };
   return (
-    <div className="comment-card-parent">
-      <div
-        onClick={() => CommentCardClickHandler()}
-        className="comment-content"
-      >
-        {comment}
-      </div>
+    <div
+      onClick={() => CommentCardClickHandler()}
+      className="comment-card-parent"
+    >
+      <div className="comment-content">{comment}</div>
       <div className="comment-action-buttons">
         <a href={urlForTwitter} rel="noreferrer" target={'_blank'}>
           <div>
