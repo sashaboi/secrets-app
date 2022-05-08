@@ -32,7 +32,9 @@ const ViewComments = () => {
     <div className="page-parent">
       <div className="comments-section-container">
         <h1>
-          {commentsFromApi.length} comments for {myName}
+          {commentsFromApi.length}{' '}
+          {commentsFromApi.length === 1 ? <>comment</> : <>comments</>} for{' '}
+          {myName}
         </h1>
 
         <Modal />
