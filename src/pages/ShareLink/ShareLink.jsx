@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { BiCopy } from 'react-icons/bi';
 import { BsTwitter } from 'react-icons/bs';
@@ -6,9 +6,17 @@ import { UseUser } from '../../context/user-context';
 import './sharelink.css';
 
 const ShareLink = () => {
-  const { username, userId } = UseUser();
-
   const navigate = useNavigate();
+  const userId = localStorage.getItem('secret-uuid');
+  useEffect(() => {
+    if (userId === null) {
+      navigate('/');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [userId]);
+
+  const { username } = UseUser();
+
   const idofuser = userId;
   console.log(idofuser);
   const twitterIntent = `https://twitter.com/intent/tweet?text=Tell%20me%20something%20....%20Anonymously.%20Give%20Me%20Feedback%20!&url=https%3A%2F%2Ffeedback-anon.netlify.app%2Fcomment%2Fb5ab602f-05a8-41a0-b1d5-ca179a1bd024`;
