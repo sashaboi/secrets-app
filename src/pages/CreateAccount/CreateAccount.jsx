@@ -48,7 +48,9 @@ const CreateAccount = () => {
           </button>
           <h3>{errorText}</h3>
         </div>
-        <div className="footer-info">About me</div>
+        <div onClick={() => navigate('/aboutme')} className="footer-info">
+          About me
+        </div>
       </div>
     </div>
   );

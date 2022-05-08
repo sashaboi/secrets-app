@@ -58,6 +58,9 @@ const MakeComment = () => {
         >
           Create your own link..
         </button>
+        <div onClick={() => navigate('/aboutme')} className="footer-info">
+          About me
+        </div>
       </div>
     </div>
   );
