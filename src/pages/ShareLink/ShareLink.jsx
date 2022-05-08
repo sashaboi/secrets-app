@@ -8,18 +8,19 @@ import './sharelink.css';
 const ShareLink = () => {
   const navigate = useNavigate();
   const userId = localStorage.getItem('secret-uuid');
+  let textinurl =
+    'What%20do%20you%20think%20about%20me%20%3F%20Tell%20me%20anonymously%0A%0A';
   useEffect(() => {
     if (userId === null) {
       navigate('/');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId]);
-
-  const { username } = UseUser();
+  const twitterIntent = `https://twitter.com/intent/tweet?text=${textinurl}&url=https%3A%2F%2Ffeedback-anon.netlify.app%2Fcomment%2F${userId}`;
+  console.log(twitterIntent);
 
   const idofuser = userId;
   console.log(idofuser);
-  const twitterIntent = `https://twitter.com/intent/tweet?text=Tell%20me%20something%20....%20Anonymously.%20Give%20Me%20Feedback%20!&url=https%3A%2F%2Ffeedback-anon.netlify.app%2Fcomment%2Fb5ab602f-05a8-41a0-b1d5-ca179a1bd024`;
   const url = `https://feedback-anon.netlify.app/comment/${idofuser}`;
   return (
     <div className="page-parent">
@@ -28,10 +29,10 @@ const ShareLink = () => {
           Share your link to get feedback <span>Anonymously</span>
         </h1>
         <div className="social-icons-container">
-          <p>Share on your feedback link on : </p>
+          <p>Share your link to get feedback </p>
           <a
             className="twitter-icon"
-            href="https://twitter.com/"
+            href={twitterIntent}
             rel="noreferrer"
             target={'_blank'}
           >

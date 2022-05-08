@@ -9,7 +9,7 @@ const AboutMe = () => {
       <div className="app-container">
         <h1>About Me</h1>
         <p className="about-me-desc">
-          I am Onkar , and I am looking for a job !
+          I am Onkar ,maker of NeoGossip, and I am looking for a job !
           <br />
           <br />
           <br /> Currently learning Reactjs @ NeogCamp, with a little bit of

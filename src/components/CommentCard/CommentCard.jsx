@@ -5,7 +5,15 @@ import { UseModal } from '../../context/Modal-context';
 
 const CommentCard = ({ comment }) => {
   const { setShowModal, setModalContent } = UseModal();
-  const twitterCommentIntent = `https://fedback-anon.netlify.app/comment/df308874-16b0-4200-bf76-4b0401792c88`;
+  var urlencode = require('urlencode');
+  var textForTwitter = `I got this anonymous feedback on Neogossip! :
+               "${comment}"
+
+  Get your own link, on `;
+  let urlForTwitter = `https://twitter.com/intent/tweet?text=${urlencode(
+    textForTwitter
+  )}&url=https://feedback-anon.netlify.app/`;
+
   const CommentCardClickHandler = () => {
     setModalContent(comment);
     setShowModal(true);
@@ -19,9 +27,11 @@ const CommentCard = ({ comment }) => {
         {comment}
       </div>
       <div className="comment-action-buttons">
-        <div>
-          <BsTwitter />
-        </div>
+        <a href={urlForTwitter} rel="noreferrer" target={'_blank'}>
+          <div>
+            <BsTwitter />
+          </div>
+        </a>
       </div>
     </div>
   );
