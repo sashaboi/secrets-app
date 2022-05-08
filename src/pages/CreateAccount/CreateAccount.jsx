@@ -4,7 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
 import './createaccount.css';
 import { ADD_USER } from '../../GraphQl/Mutations';
+import { UseUser } from '../../context/user-context';
 const CreateAccount = () => {
+  const { setUserName, setUserID } = UseUser();
+
   const navigate = useNavigate();
   const [errorText, setErrorText] = useState('');
   const [userNameText, setUserNameText] = useState('');
@@ -17,8 +20,10 @@ const CreateAccount = () => {
     Adduser({
       variables: { uid_from_local: userUuid, username: userNameText },
     });
-    console.log('run creation api with ', userNameText, ' as username');
-    navigate('/sharelink', { state: { idofuser: userUuid } });
+
+    setUserName(userNameText);
+    setUserID(userUuid);
+    navigate('/sharelink');
   };
 
   return (

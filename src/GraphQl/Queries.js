@@ -8,3 +8,10 @@ export const SEE_COMMENT_BY_USER_ID = gql`
     }
   }
 `;
+export const FIND_USERNAME_BY_ID = gql`
+  query FindUserName($uid_from_local: String!) {
+    Users_by_pk(uid_from_local: $uid_from_local) {
+      username
+    }
+  }
+`;

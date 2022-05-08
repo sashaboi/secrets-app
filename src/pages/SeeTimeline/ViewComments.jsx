@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
+import { BiCopy } from 'react-icons/bi';
 import { Circles } from 'react-loading-icons';
 import { SEE_COMMENT_BY_USER_ID } from '../../GraphQl/Queries';
 import './viewcomments.css';
 import CommentCard from '../../components/CommentCard/CommentCard';
 const ViewComments = () => {
+  const idofuser = localStorage.getItem('secret-uuid');
+  const url = `https://feedback-anon.netlify.app/comment/${idofuser}`;
   const navigate = useNavigate();
   const [commentsFromApi, setCommentsFromApi] = useState([]);
   const myId = localStorage.getItem('secret-uuid');
@@ -37,12 +40,32 @@ const ViewComments = () => {
               <CommentCard key={obj.pk} comment={obj.comment} />
             ))
           ) : (
-            <p>
-              <Circles />
-            </p>
+            <div>
+              {loading ? (
+                <Circles />
+              ) : (
+                <h3>No feedback yet , share your link to get feedback</h3>
+              )}
+            </div>
           )}
         </div>
-        <button onClick={() => navigate('/sharelink')} className="primary-btn">
+
+        <h3>Share your link to get more comments</h3>
+
+        <div
+          onClick={() => {
+            navigator.clipboard.writeText(url);
+            alert('copied url to clipboard!');
+          }}
+          className="url-copy-div"
+        >
+          {url}
+
+          <div className="copy-badge">
+            <BiCopy />
+          </div>
+        </div>
+        <button onClick={() => navigate('/')} className="primary-btn">
           Go Home
         </button>
       </div>

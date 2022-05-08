@@ -10,6 +10,9 @@
   gap: 0.6rem;
   flex-grow: 0;
 }
+.twitter-icon {
+  font-size: 3rem;
+}
 .url-copy-div:hover {
   background-color: #cccccc;
   cursor: pointer;
@@ -24,6 +27,8 @@
 }
 .social-icons-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
   font-size: 2rem;
 }
