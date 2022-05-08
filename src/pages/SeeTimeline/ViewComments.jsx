@@ -9,7 +9,10 @@ import Modal from '../../components/Modal/Modal';
 import CommentCard from '../../components/CommentCard/CommentCard';
 import Navbar from '../../components/NavBar/Navbar';
 import Footer from '../../components/Footer/Footer';
+import Alert from '../../components/Alert/Alert';
+import { UseAlert } from '../../context/Alert-context';
 const ViewComments = () => {
+  const { alertstatus, alertmessage, showalert } = UseAlert();
   const idofuser = localStorage.getItem('secret-uuid');
   const url = `${window.location.origin}/comment/${idofuser}`;
   const navigate = useNavigate();
@@ -33,6 +36,7 @@ const ViewComments = () => {
   return (
     <div className="page-parent">
       <Navbar />
+      {alertstatus && <Alert message={alertmessage} />}
       <div className="comments-section-container">
         <h1>
           {commentsFromApi.length}{' '}
@@ -60,7 +64,7 @@ const ViewComments = () => {
         <div
           onClick={() => {
             navigator.clipboard.writeText(url);
-            alert('copied url to clipboard!');
+            showalert('copied url to clipboard!');
           }}
           className="url-copy-div"
         >
