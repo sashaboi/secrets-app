@@ -11,6 +11,7 @@ import { UseAlert } from '../../context/Alert-context';
 
 const ShareLink = () => {
   const navigate = useNavigate();
+  const textWithUrl = 'Share what you think about me .... anonymously : ';
   const { alertstatus, alertmessage, showalert } = UseAlert();
   const userId = localStorage.getItem('secret-uuid');
   let textinurl =
@@ -48,7 +49,7 @@ const ShareLink = () => {
         </div>
         <div
           onClick={() => {
-            navigator.clipboard.writeText(url);
+            navigator.clipboard.writeText(textWithUrl + url);
             showalert('copied url to clipboard!');
           }}
           className="url-copy-div"
