@@ -29,13 +29,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  flex-direction: column;
+
   font-size: 2rem;
 }
 .social-icons-container {
   color: grey;
 }
-.social-icons-container > *:hover {
+.social-icons-container > a:hover {
   cursor: pointer;
   color: rgb(78, 78, 78);
 }

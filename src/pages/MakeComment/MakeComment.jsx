@@ -48,7 +48,11 @@ const MakeComment = () => {
           type="text"
           placeholder="write your feedback here"
         />
-        <button className="primary-btn" onClick={sendCommentHandler}>
+        <button
+          className="primary-btn"
+          disabled={comment.length === 0 || disabled}
+          onClick={sendCommentHandler}
+        >
           Send comment
         </button>
         <button

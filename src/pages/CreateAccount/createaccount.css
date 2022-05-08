@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 .page-parent {
   background-color: #e0e0e0;
   display: flex;
