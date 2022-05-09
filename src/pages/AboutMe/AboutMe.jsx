@@ -11,8 +11,8 @@ const AboutMe = () => {
       <div className="app-container">
         <h1>About Me</h1>
         <p className="about-me-desc">
-          I am Onkar ,maker of NeoGossip, and I am looking for a job as Frontend
-          Developer !
+          I am Onkar ,creator of NeoGossip, and I am looking for a job as
+          Frontend Developer !
           <br />
           <br />
           <br /> Upskilling my Reactjs @ NeogCamp, experience in Python/Django ,
