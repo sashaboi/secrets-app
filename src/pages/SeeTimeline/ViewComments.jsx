@@ -33,16 +33,43 @@ const ViewComments = () => {
     }
   }, [data]);
   console.log(commentsFromApi.length);
+  const spamFilterHandler = () => {
+    setCommentsFromApi(commentsFromApi.filter(obj => obj.comment.length > 5));
+    showalert('Spam removed');
+  };
+  const showRelevant = () => {
+    setCommentsFromApi(
+      [...commentsFromApi].sort(function (a, b) {
+        return b.comment.length - a.comment.length;
+      })
+    );
+    showalert('Showing relevant first');
+  };
+  const showAll = () => {
+    setCommentsFromApi(data.comments);
+    showalert('Showing all');
+  };
   return (
     <div className="page-parent">
       <Navbar />
       {alertstatus && <Alert message={alertmessage} />}
       <div className="comments-section-container">
-        <h1>
-          {commentsFromApi.length}{' '}
-          {commentsFromApi.length === 1 ? <>comment</> : <>comments</>} for{' '}
-          {myName}
-        </h1>
+        <div className="horizontal-align">
+          <h1>
+            {commentsFromApi.length}{' '}
+            {commentsFromApi.length === 1 ? <>comment</> : <>comments</>} for{' '}
+            {myName}
+          </h1>
+          <button onClick={() => spamFilterHandler()} className="secondary-btn">
+            Filter spam
+          </button>
+          <button onClick={() => showRelevant()} className="secondary-btn">
+            Show relevant
+          </button>
+          <button onClick={() => showAll()} className="secondary-btn">
+            Show all
+          </button>
+        </div>
 
         <Modal />
         <div className="comment-renderer">
